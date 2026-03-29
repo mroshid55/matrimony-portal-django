@@ -1,18 +1,31 @@
-# 💍 Matrimony Portal
+# 💍 Matrimony Portal (Django)
 
-This project is a Matrimony Portal developed using Python and Django, designed to provide a modern and efficient matchmaking platform. Users can create and manage profiles, search for matches based on preferences, and interact securely within the system.
+## 📌 Overview
+This is a web-based Matrimony Portal built with Python and Django. It allows users to register, create profiles, search for matches, and interact securely.
 
 ---
 
 ## 🚀 Features
-
-- User registration and authentication  
+- User registration & login system  
 - Profile creation and management  
-- Advanced search and filtering  
+- Match searching with filters  
 - Secure user interaction  
 
 ---
 
-## 🎯 Objective
+## 🛠️ Tech Stack
+- Python
+- Django
+- HTML, CSS, Bootstrap
+- SQLite
 
-The goal of this project is to demonstrate scalable web application development and the practical implementation of real-world matching systems.
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/mroshid55/matrimony-portal-django.git
+cd matrimony-portal-django
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
