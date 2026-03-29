@@ -1,0 +1,1047 @@
+{% extends "base.html" %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+<div class="py-4">
+  <div class="container">
+    <div class="row">
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+        </button> -->
+
+      <div
+        class="modal fade bd-example-modal-xl"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Marriage Advertise
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label class="mb-1">post title</label>
+                  <div class="position-relative icon-form-control">
+                    <i class="feather-at-sign position-absolute"></i>
+                    {{form.post_title|as_crispy_field}}
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">First name</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.frist_name|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Last name</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.last_name|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Father name</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.father_name|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Father profession</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.father_profession|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Mother name</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.mother_name|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Mother profession</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.mother_profession|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Birthday</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.birthday|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Gender</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.gender|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Height</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.height|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Weight</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.weight|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Blood group</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.blood_group|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Skin color</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.skin_color|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Religion</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.religion|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Marriage status</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.marriage_status|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Education level</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.education|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Occupation</label>
+                      <div class="position-relative icon-form-control">
+                        <!-- <i class="feather-user position-absolute"></i> -->
+                        {{form.occupation|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Present address</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.present_address|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Permanent address</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.permanent_address|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">Family details</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.Sister_brother_details|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="mb-1">I like husband or wife</label>
+                      <div class="position-relative icon-form-control">
+                        <i class="feather-user position-absolute"></i>
+                        {{form.others|as_crispy_field}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="text-right">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              </form>
+            </div>
+            <!-- <div class="modal-footer"></div> -->
+          </div>
+        </div>
+      </div>
+
+      <main
+        class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12"
+      >
+        <div
+          class="box shadow-sm border rounded bg-white mb-3 osahan-share-post"
+        >
+          <ul
+            class="nav nav-justified border-bottom osahan-line-tab"
+            id="myTab"
+            role="tablist"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="home-tab"
+                data-toggle="tab"
+                href="#home"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+                ><i class="feather-edit"></i> Your Advertisement</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="profile-tab"
+                data-toggle="tab"
+                href="#profile"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+                ><i class="feather-image"></i> Upload a photo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="contact-tab"
+                data-toggle="tab"
+                href="#contact"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+                ><i class="feather-clipboard"></i> Write an article</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <div class="p-3 d-flex align-items-center w-100" href="#">
+                <!-- <div class="dropdown-list-image mr-3">
+                  <img
+                    class="rounded-circle"
+                    src="{% static 'asset/img/user.png' %}"
+                    alt
+                  />
+                  <div class="status-indicator bg-success"></div>
+                </div> -->
+                <!-- <div class="w-100">
+                  <textarea
+                    placeholder="Write your thoughts..."
+                    class="form-control border-0 p-0 shadow-none"
+                    rows="1"
+                  ></textarea>
+                </div> -->
+                <a
+                  href="#"
+                  class="btn btn-primary btn-lg btn-block"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                  >Post Your Ads</a
+                >
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="profile"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              <div class="p-3 w-100">
+                <textarea
+                  placeholder="Write your thoughts..."
+                  class="form-control border-0 p-0 shadow-none"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="contact"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              <div class="p-3 w-100">
+                <textarea
+                  placeholder="Write an article..."
+                  class="form-control border-0 p-0 shadow-none"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="border-top p-3 d-flex align-items-center">
+            <div class="mr-auto">
+              <a href="#" class="text-link small"
+                ><i class="feather-map-pin"></i> Add Location</a
+              >
+            </div>
+            <div class="flex-shrink-1">
+              <button type="button" class="btn btn-light btn-sm">
+                Preview
+              </button>
+              <button type="button" class="btn btn-primary btn-sm">
+                Post Status
+              </button>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="mb-3 shadow-sm rounded box bg-white osahan-slider-main">
+          <div class="osahan-slider">
+            {% for ads in advertisements %}
+            <div class="osahan-slider-item">
+              <a href="{% url 'profile' ads.user.pk %}">
+                <div
+                  class="shadow-sm border rounded bg-white job-item job-item mr-2 mt-3 mb-3"
+                >
+                  <div class="d-flex align-items-center p-3 job-item-header">
+                    <div class="overflow-hidden mr-2">
+                      <div
+                        class="font-weight-bold text-dark mb-0 text-truncate"
+                      >
+                        {{ ads.user.first_name }} {{ ads.user.last_name }}
+                      </div>
+                      <div
+                        class="font-weight-normal text-primary mb-0 text-truncate"
+                      >
+                        @{{ads.user.username}}
+                      </div>
+                      <div class="text-truncate text-dark">
+                        {{ads.user.profile.occupation}}
+                      </div>
+                      <!-- <div class="small text-gray-500">
+                        <i class="feather-map-pin"></i> India, Punjab
+                      </div> -->
+                    </div>
+                    {% if ads.user.profile.profile_image %}
+                    <img
+                      class="img-fluid ml-auto"
+                      src="{{ads.user.profile.profile_image.url}}"
+                      alt
+                    />
+                    {% else %}
+                    <img
+                      class="img-fluid ml-auto"
+                      src="{% static 'images/default_profile_pic.png' %}"
+                      alt
+                    />
+                    {% endif %}
+                  </div>
+                  <div
+                    class="d-flex align-items-center p-3 border-top border-bottom job-item-body"
+                  >
+                    <!-- <div class="overlap-rounded-circle d-flex">
+                      <img
+                        class="rounded-circle shadow-sm"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title
+                        src="img/p1.png"
+                        alt
+                        data-original-title="Sophia Lee"
+                      />
+                      <img
+                        class="rounded-circle shadow-sm"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title
+                        src="img/p2.png"
+                        alt
+                        data-original-title="John Doe"
+                      />
+                      <img
+                        class="rounded-circle shadow-sm"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title
+                        src="img/p3.png"
+                        alt
+                        data-original-title="Julia Cox"
+                      />
+                      <img
+                        class="rounded-circle shadow-sm"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title
+                        src="img/p4.png"
+                        alt
+                        data-original-title="Robert Cook"
+                      />
+                      <img
+                        class="rounded-circle shadow-sm"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title
+                        src="img/p5.png"
+                        alt
+                        data-original-title="Sophia Lee"
+                      />
+                    </div>-->
+                    <span class="font-weight-bold text-primary"
+                      >{{ads.post_title}}</span
+                    >
+                  </div>
+                  <div class="p-3 job-item-footer">
+                    <small class="text-gray-500"
+                      ><i class="feather-clock"></i>
+                      {{ads.created_at|timesince}} ago</small
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% for ads in advertisements %}
+        <div class="box shadow-sm border rounded bg-white mb-3 osahan-post">
+          <div
+            class="p-3 d-flex align-items-center border-bottom osahan-post-header"
+          >
+            {% if ads.user.profile.profile_image %}
+            <div class="dropdown-list-image mr-3">
+              <img
+                class="rounded-circle"
+                src="{{ads.user.profile.profile_image.url}}"
+                alt
+              />
+              <div class="status-indicator bg-success"></div>
+            </div>
+            {% else %}
+            <div class="dropdown-list-image mr-3">
+              <img
+                class="rounded-circle"
+                src="{% static 'images/default_profile_pic.png' %}"
+                alt
+              />
+              <div class="status-indicator bg-success"></div>
+            </div>
+            {% endif %}
+            <div class="font-weight-bold">
+              <div class="font-weight-bold text-dark mb-0">
+                {{ ads.user.first_name }} {{ ads.user.last_name }}
+              </div>
+              <div class="small text-primary mb-0">@{{ads.user.username}}</div>
+              <div class="small text-gray-500">
+                {{ads.user.profile.occupation}}
+              </div>
+            </div>
+            <span class="ml-auto small"
+              ><i class="feather-clock"></i> {{ads.created_at|timesince}}
+              ago</span
+            >
+          </div>
+          <div class="p-3 border-bottom osahan-post-body">
+            <h3 class="mb-2">
+              <i class="feather-check-square text-primary"></i> {{ads.post_title}}
+            </h3>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Name : {{ads.frist_name}} {{ads.last_name}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Father Name : {{ads.father_name}} <i class="feather-chevron-right text-info"></i> Father Profession : {{ads.father_profession}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Mother Name : {{ads.mother_name}} <i class="feather-chevron-right text-info"></i> Mother Profession : {{ads.mother_profession}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Age : {{ads.birthday|timesince}} <i class="feather-chevron-right text-info"></i> Gender : {{ads.gender}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Height : {{ads.height}} <i class="feather-chevron-right text-info"></i> Weight : {{ads.weight}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Blood_group : {{ads.blood_group}} <i class="feather-chevron-right text-info"></i> Skin color : {{ads.skin_color}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Religion : {{ads.religion}} <i class="feather-chevron-right text-info"></i> Marriage status : {{ads.marriage_status}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Education : {{ads.education}} <i class="feather-chevron-right text-info"></i> Occupation : {{ads.occupation}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Present_address : {{ads.present_address}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Permanent_address : {{ads.permanent_address}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> Family details : {{ads.Sister_brother_details}}
+            </p>
+            <p class="mb-0">
+              <i class="feather-chevron-right text-info"></i> I like a husband or Wife : {{ads.others}}
+            </p>
+          </div>
+          <div class="p-3 border-bottom osahan-post-footer">
+            {{ ads.number_of_likes }} {% if user in ads.likes.all %}
+            <a
+              class="mr-3 text-secondary"
+              href="{% url 'advertisement_like' ads.id %}"
+            >
+              <i class="feather-heart text-danger"></i
+            ></a>
+            {% else %}
+            <a
+              class="mr-3 text-secondary"
+              href="{% url 'advertisement_like' ads.id %}"
+            >
+              <i class="feather-heart text-dark"></i
+            ></a>
+            {% endif %}
+            <!-- <a href="#" class="mr-3 text-secondary"
+              ><i class="feather-heart text-danger"></i> </a
+            > -->
+            <a href="#" class="mr-3 text-secondary"
+              ><i class="feather-message-square"></i> 8</a
+            >
+            <a href="#" class="mr-3 text-secondary"
+              ><i class="feather-share-2"></i> 2</a
+            >
+          </div>
+          <div class="p-3">
+            <button type="button" class="btn btn-outline-primary btn-sm mr-1">
+              Awesome!!
+            </button>
+            <button type="button" class="btn btn-light btn-sm mr-1">😍</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mr-1">
+              Whats it about?
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm mr-1">
+              Oooo Great Wow
+            </button>
+          </div>
+        </div>
+        {% endfor %}
+
+        <div class="box mb-3 shadow-sm border rounded bg-white osahan-post">
+          <div
+            class="p-3 d-flex align-items-center border-bottom osahan-post-header"
+          >
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="img/p6.png" alt />
+              <div class="status-indicator bg-success"></div>
+            </div>
+            <div class="font-weight-bold">
+              <div class="text-truncate">Collin Weiland</div>
+              <div class="small text-gray-500">Web Developer @Google</div>
+            </div>
+            <span class="ml-auto small">3 hours</span>
+          </div>
+          <div class="p-3 border-bottom osahan-post-body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur 😍😎 adipisicing elit, sed
+              do eiusmod tempo incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco
+              <a href="#">laboris consequat.</a>
+            </p>
+            <img
+              src="{% static 'asset/img/post1.png' %}"
+              class="img-fluid"
+              alt="Responsive image"
+            />
+          </div>
+          <div class="p-3 border-bottom osahan-post-footer">
+            <a href="#" class="mr-3 text-secondary"
+              ><i class="feather-heart text-danger"></i> 16</a
+            >
+            <a href="#" class="mr-3 text-secondary"
+              ><i class="feather-message-square"></i> 8</a
+            >
+            <a href="#" class="mr-3 text-secondary"
+              ><i class="feather-share-2"></i> 2</a
+            >
+          </div>
+          <div
+            class="p-3 d-flex align-items-top border-bottom osahan-post-comment"
+          >
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="img/p7.png" alt />
+              <div class="status-indicator bg-success"></div>
+            </div>
+            <div class="font-weight-bold">
+              <div class="text-truncate">
+                James Spiegel <span class="float-right small">2 min</span>
+              </div>
+              <div class="small text-gray-500">
+                Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam
+                est, quinder dolorem ipsum quia dolor sit amet, consectetur
+              </div>
+            </div>
+          </div>
+          <div class="p-3">
+            <textarea
+              placeholder="Add Comment..."
+              class="form-control border-0 p-0 shadow-none"
+              rows="1"
+            ></textarea>
+          </div>
+        </div>
+      </main>
+      <aside
+        class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12"
+      >
+        <div
+          class="box mb-3 shadow-sm border rounded bg-white profile-box text-center"
+        >
+          <div class="py-4 px-3 border-bottom">
+            {% if profile %} {% if user.profile.profile_image %}
+            <img
+              src="{{ user.profile.profile_image.url }}"
+              class="img-fluid mt-2 rounded-circle"
+              alt="{{ user.profile.user.username }}"
+            />
+            {% else %}
+            <img
+              src="{% static 'images/default_profile_pic.png' %}"
+              class="img-fluid mt-2 rounded-circle"
+              alt="{{ user.profile.user.username }}"
+            />
+            {% endif %} {% endif %} {% if profile %} {% if user.profile.user.username %}
+            <h5 class="font-weight-bold text-dark mb-1 mt-4">
+              {{ user.profile.user.first_name }} {{ user.profile.user.last_name }}
+            </h5>
+            <h6 class="font-weight-bold text-primary mb-1 mt-2">
+              @{{ user.profile.user.username }}
+            </h6>
+            <p class="mb-0 text-muted">{{user.profile.occupation}}</p>
+            {% endif %} {% endif %}
+          </div>
+          <div class="d-flex">
+            <div class="col-6 border-right p-3">
+              <h6 class="font-weight-bold text-dark mb-1">
+                {{followers_count}}
+              </h6>
+              <a
+                class="mb-0 text-black-50 small"
+                href="{% url 'followers' user.profile.user.pk %}"
+                ><i class="feather-users mr-2"></i>followers</a
+              >
+            </div>
+            <div class="col-6 p-3">
+              <h6 class="font-weight-bold text-dark mb-1">
+                {{following_count}}
+              </h6>
+
+              <a
+                class="mb-0 text-black-50 small"
+                href="{% url 'following' user.profile.user.pk %}"
+                ><i class="feather-users mr-2"></i>following</a
+              >
+            </div>
+          </div>
+          <div class="overflow-hidden border-top">
+            <a
+              class="font-weight-bold p-3 d-block"
+              href="{% url 'profile' user.profile.user.id %}"
+            >
+              View my profile
+            </a>
+          </div>
+        </div>
+        <!-- <div
+          class="box mb-3 shadow-sm rounded bg-white view-box overflow-hidden"
+        >
+          <div class="box-title border-bottom p-3">
+            <h6 class="m-0">Profile Views</h6>
+          </div>
+          <div class="d-flex text-center">
+            <div class="col-6 border-right py-4 px-2">
+              <h5 class="font-weight-bold text-info mb-1">
+                08 <i class="feather-bar-chart-2"></i>
+              </h5>
+              <p class="mb-0 text-black-50 small">last 5 days</p>
+            </div>
+            <div class="col-6 py-4 px-2">
+              <h5 class="font-weight-bold text-success mb-1">
+                + 43% <i class="feather-bar-chart"></i>
+              </h5>
+              <p class="mb-0 text-black-50 small">Since last week</p>
+            </div>
+          </div>
+          <div class="overflow-hidden border-top text-center">
+            <img
+              src="{% static 'asset/img/chart.png' %}"
+              class="img-fluid"
+              alt="Responsive image"
+            />
+          </div>
+        </div> -->
+        <div class="box shadow-sm mb-3 rounded bg-white ads-box text-center">
+          <img
+            src="{% static 'asset/img/job1.png' %}"
+            class="img-fluid"
+            alt="Responsive image"
+          />
+          <div class="p-3 border-bottom">
+            <h6 class="font-weight-bold text-dark">Osahan Solutions</h6>
+            <p class="mb-0 text-muted">Looking for talent?</p>
+          </div>
+          <div class="p-3">
+            <button type="button" class="btn btn-outline-primary pl-4 pr-4">
+              POST A JOB
+            </button>
+          </div>
+        </div>
+      </aside>
+      <aside
+        class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12"
+      >
+        <div class="box shadow-sm border rounded bg-white mb-3">
+          <div class="box-title border-bottom p-3">
+            <h6 class="m-0">People you might know</h6>
+          </div>
+          <div class="box-body p-3">
+            
+            <div class="d-flex align-items-center osahan-post-header mb-3 people-list"
+            >
+              <div class="dropdown-list-image mr-3">
+                <img
+                  class="rounded-circle"
+                  src="{% static 'asset/img/p8.png' %}"
+                  alt
+                />
+                <div class="status-indicator bg-success"></div>
+              </div>
+              <div class="font-weight-bold mr-2">
+                <div class="text-truncate">Md.Mamunur Roshid</div>
+                <div class="small text-gray-500">Engineer</div>
+              </div>
+              <span class="ml-auto"
+                ><button type="button" class="btn btn-light btn-sm">
+                  <i class="feather-user-plus"></i>
+                </button>
+              </span>
+            </div>
+            
+          </div>
+        </div>
+        <div class="box shadow-sm border rounded bg-white mb-3">
+          <div class="box-title border-bottom p-3 d-flex align-items-center">
+            <h6 class="m-0">Photos</h6>
+            <a class="ml-auto" href="#"
+              >See All <i class="feather-chevron-right"></i
+            ></a>
+          </div>
+          <div class="box-body p-3">
+            <div class="gallery-box-main">
+              <div class="gallery-box">
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p4.png' %}"
+                  alt
+                />
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p5.png' %}"
+                  alt
+                />
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p6.png' %}"
+                  alt
+                />
+              </div>
+              <div class="gallery-box">
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p7.png' %}"
+                  alt
+                />
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p8.png' %}"
+                  alt
+                />
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p9.png' %}"
+                  alt
+                />
+              </div>
+              <div class="gallery-box">
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p10.png' %}"
+                  alt
+                />
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p11.png' %}"
+                  alt
+                />
+                <img
+                  class="img-fluid"
+                  src="{% static 'asset/img/p12.png' %}"
+                  alt
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="box shadow-sm mb-3 rounded bg-white ads-box text-center overflow-hidden"
+        >
+          <img
+            src="{% static 'asset/img/ads1.png' %}"
+            class="img-fluid"
+            alt="Responsive image"
+          />
+          <div class="p-3 border-bottom">
+            <h6 class="font-weight-bold text-gold">Osahanin Premium</h6>
+            <p class="mb-0 text-muted">Grow & nurture your network</p>
+          </div>
+          <div class="p-3">
+            <button type="button" class="btn btn-outline-gold pl-4 pr-4">
+              ACTIVATE
+            </button>
+          </div>
+        </div>
+        <div class="box shadow-sm border rounded bg-white mb-3">
+          <div class="box-title border-bottom p-3">
+            <h6 class="m-0">Jobs</h6>
+          </div>
+          <div class="box-body p-3">
+            <a href="job-profile.html">
+              <div class="shadow-sm border rounded bg-white job-item mb-3">
+                <div class="d-flex align-items-center p-3 job-item-header">
+                  <div class="overflow-hidden mr-2">
+                    <h6 class="font-weight-bold text-dark mb-0 text-truncate">
+                      Product Director
+                    </h6>
+                    <div class="text-truncate text-primary">Spotify Inc.</div>
+                    <div class="small text-gray-500">
+                      <i class="feather-map-pin"></i> India, Punjab
+                    </div>
+                  </div>
+                  <img
+                    class="img-fluid ml-auto"
+                    src="{% static 'asset/img/l3.png' %}"
+                    alt
+                  />
+                </div>
+                <div
+                  class="d-flex align-items-center p-3 border-top border-bottom job-item-body"
+                >
+                  <div class="overlap-rounded-circle">
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p9.png"
+                      alt
+                      data-original-title="Sophia Lee"
+                    />
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p10.png"
+                      alt
+                      data-original-title="John Doe"
+                    />
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p11.png"
+                      alt
+                      data-original-title="Julia Cox"
+                    />
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p12.png"
+                      alt
+                      data-original-title="Robert Cook"
+                    />
+                  </div>
+                  <span class="font-weight-bold text-muted"
+                    >18 connections</span
+                  >
+                </div>
+                <div class="p-3 job-item-footer">
+                  <small class="text-gray-500"
+                    ><i class="feather-clock"></i> Posted 3 Days ago</small
+                  >
+                </div>
+              </div>
+            </a>
+            <a href="job-profile.html">
+              <div class="shadow-sm border rounded bg-white job-item">
+                <div class="d-flex align-items-center p-3 job-item-header">
+                  <div class="overflow-hidden mr-2">
+                    <h6 class="font-weight-bold text-dark mb-0 text-truncate">
+                      .NET Developer
+                    </h6>
+                    <div class="text-truncate text-primary">Invision</div>
+                    <div class="small text-gray-500">
+                      <i class="feather-map-pin"></i> London, UK
+                    </div>
+                  </div>
+                  <img
+                    class="img-fluid ml-auto"
+                    src="{% static 'asset/img/l4.png' %}"
+                    alt
+                  />
+                </div>
+                <div
+                  class="d-flex align-items-center p-3 border-top border-bottom job-item-body"
+                >
+                  <div class="overlap-rounded-circle">
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p13.png"
+                      alt
+                      data-original-title="Sophia Lee"
+                    />
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p1.png"
+                      alt
+                      data-original-title="John Doe"
+                    />
+                    <img
+                      class="rounded-circle shadow-sm"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title
+                      src="img/p3.png"
+                      alt
+                      data-original-title="Robert Cook"
+                    />
+                  </div>
+                  <span class="font-weight-bold text-muted"
+                    >18 connections</span
+                  >
+                </div>
+                <div class="p-3 job-item-footer">
+                  <small class="text-gray-500"
+                    ><i class="feather-clock"></i> Posted 3 Days ago</small
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}
